@@ -1,7 +1,7 @@
 
 
 // import React, { useState } from "react";
-// import { AddUser } from "../assets/objects.js"; // Import the addUser function
+// import { AddUser } from "../assets/objects.js"; // Import the AddUser function
 // import { toast } from "react-toastify";
 
 // const addUser = () => {
@@ -27,7 +27,7 @@
 //     }
 
 //     try {
-//       AddUser(formData); // Add user to the shared data store
+//       AddUser(formData); // Try to add user
 //       toast.success("User added successfully!");
 
 //       // Reset the form
@@ -40,7 +40,7 @@
 //         status: "Active",
 //       });
 //     } catch (error) {
-//       toast.error("Failed to add user");
+//       toast.error(error.message); // Display error message if user already exists
 //     }
 //   };
 
@@ -129,6 +129,7 @@
 import React, { useState } from "react";
 import { AddUser } from "../assets/objects.js"; // Import the AddUser function
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 
 const addUser = () => {
   const [formData, setFormData] = useState({
@@ -139,6 +140,8 @@ const addUser = () => {
     role: "User",
     status: "Active",
   });
+
+  const navigate = useNavigate(); // Initialize the navigate function
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -165,6 +168,9 @@ const addUser = () => {
         role: "User",
         status: "Active",
       });
+
+      // Redirect to the list of users (ListUser.jsx)
+      navigate("/listUser"); // Adjust the route path according to your routing setup
     } catch (error) {
       toast.error(error.message); // Display error message if user already exists
     }

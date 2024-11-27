@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage'; // Import HomePage
 import AddUser from './pages/addUser';
 import ListUser from './pages/listUser';
 import RoleManagment from './pages/RoleManagement';
+import RoleList from './pages/RoleList';
 import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -44,7 +45,7 @@ const App = () => {
                   {/* Other Routes */}
                  
                   <Route path='/addUser' element={<AddUser token={token} />} />
-                 
+                  <Route path='/RoleList' element={<RoleList token={token} />} />
                   <Route path='/listUser' element={<ListUser token={token} />} />
                   <Route path='/RoleManagement' element={<RoleManagment token={token} />} />
                   

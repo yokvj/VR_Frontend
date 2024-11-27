@@ -41,5 +41,29 @@ export const editUser = (updatedUser) => {
   return false; // Return false if the user was not found
 };
 
- // Array to store role data
- let roles = [];
+
+
+
+
+let roles = [];  // Array to store roles
+
+// Function to add a role
+const addRole = (role) => {
+  const isDuplicate = roles.some(existingRole => existingRole.employeeId === role.employeeId);
+  if (isDuplicate) {
+    throw new Error("Role with the same Employee ID already exists.");
+  }
+  roles.push(role);
+};
+
+// Function to get all roles
+const getRoles = () => {
+  return roles;
+};
+const deleteRole = (employeeId) => {
+  roles = roles.filter((role) => role.employeeId !== employeeId);
+};
+
+// Export the functions
+export { addRole, getRoles, deleteRole };
+

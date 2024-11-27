@@ -12,7 +12,10 @@ const HomePage = () => {
   const RoleManagemnt = () => {
     navigate("/RoleManagement"); // Navigate to the ListUser page
   };
-
+  const RoleList = () => {
+    navigate("/RoleList"); // Navigate to the ListUser page
+  };
+  
   const toggleShowMore = () => {
     setShowMore(!showMore); // Toggle between showing and hiding additional boxes
   };
@@ -28,13 +31,13 @@ const HomePage = () => {
       </div>
 
       {/* Total Inactive Users Box */}
-      <div onClick={RoleManagemnt} className="w-full sm:w-[300px] h-[150px] rounded-lg shadow-lg flex items-center justify-center text-white text-center text-lg font-semibold bg-gradient-to-r from-red-500 to-pink-500">
+      <div  className="w-full sm:w-[300px] h-[150px] rounded-lg shadow-lg flex items-center justify-center text-white text-center text-lg font-semibold bg-gradient-to-r from-red-500 to-pink-500">
        Role Management
       </div>
 
-      {/* Empty Box */}
-      <div className="w-full sm:w-[300px] h-[150px] rounded-lg shadow-lg flex items-center justify-center text-white text-center text-lg font-semibold bg-gradient-to-r from-green-500 to-teal-500">
-            Additional Box 1
+      {/* Empty BonClick={RoleManagemnt}ox */}
+      <div onClick={RoleList} className="w-full sm:w-[300px] h-[150px] rounded-lg shadow-lg flex items-center justify-center text-white text-center text-lg font-semibold bg-gradient-to-r from-green-500 to-teal-500">
+      Role Permissions
           </div>
 
       {/* Down Arrow (Shows additional boxes when clicked) */}
