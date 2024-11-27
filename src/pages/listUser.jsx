@@ -461,13 +461,13 @@ const ListUser = () => {
                   <td className="px-4 py-2 border">
                     <button
                       onClick={() => handleEdit(user)}
-                      className="w-full lg:w-auto px-2 py-1 bg-blue-500 text-white rounded-md mr-2"
+                      className="w-full lg:w-auto px-1 py-0 bg-blue-500 text-white rounded-md mr-2"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDelete(user.id)}
-                      className="w-full lg:w-auto px-2 py-1 bg-red-500 text-white rounded-md"
+                      className="w-full lg:w-auto px-1 py-0 bg-red-500 text-white rounded-md"
                     >
                       Delete
                     </button>

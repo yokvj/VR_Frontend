@@ -33,7 +33,9 @@ const HomePage = () => {
       </div>
 
       {/* Empty Box */}
-      <div className="w-full sm:w-[300px] h-[150px] rounded-lg shadow-lg bg-gradient-to-r from-gray-400 to-gray-600"></div>
+      <div className="w-full sm:w-[300px] h-[150px] rounded-lg shadow-lg flex items-center justify-center text-white text-center text-lg font-semibold bg-gradient-to-r from-green-500 to-teal-500">
+            Additional Box 1
+          </div>
 
       {/* Down Arrow (Shows additional boxes when clicked) */}
       <div
