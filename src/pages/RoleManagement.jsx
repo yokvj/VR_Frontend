@@ -1,14 +1,12 @@
 
 
 
-
-
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { addRole } from "../assets/objects.js";  // Import the addRole function from object.js
+import { addRole } from "../assets/objects.js"; // Import the addRole function from object.js
 
-let roles = [];  // This will act as your data source for roles
+let roles = []; // This will act as your data source for roles
 
 const RoleManagement = () => {
   const location = useLocation();
@@ -20,7 +18,10 @@ const RoleManagement = () => {
   const navigate = useNavigate();
 
   const { name, id } = user;
-  const roleOptions = ["Software Engineer", "QA Engineer", "DevOps Engineer", "System Administrator", "Frontend Developer", "Backend Developer", "Full Stack Developer", "Database Administrator", "Project Manager", "Product Owner", "UI/UX Designer", "Technical Writer"];
+  const roleOptions = [
+    "Software Engineer", "QA Engineer", "DevOps Engineer", "System Administrator", "Frontend Developer", "Backend Developer", 
+    "Full Stack Developer", "Database Administrator", "Project Manager", "Product Owner", "UI/UX Designer", "Technical Writer"
+  ];
 
   const handleSecKeySubmit = () => {
     const storedSecKey = import.meta.env.VITE_SEC_KEY;
@@ -30,6 +31,12 @@ const RoleManagement = () => {
     } else {
       toast.error("Incorrect SEC Key. Please try again.");
     }
+  };
+
+  const handleCancel = () => {
+    // Clear the SEC Key input and navigate back to the previous page
+    setSecKey("");
+    navigate("/listUser"); // You can navigate to a different route if necessary
   };
 
   useEffect(() => {
@@ -53,12 +60,18 @@ const RoleManagement = () => {
             onChange={(e) => setSecKey(e.target.value)}
             className="w-full p-2 border border-gray-300 rounded-md mb-4"
           />
-          <div className="flex justify-end">
+          <div className="flex justify-end space-x-2">
             <button
               onClick={handleSecKeySubmit}
               className="px-4 py-2 bg-black text-white rounded-md"
             >
               Submit
+            </button>
+            <button
+              onClick={handleCancel}
+              className="px-4 py-2 bg-gray-300 text-black rounded-md"
+            >
+              Cancel
             </button>
           </div>
         </div>
@@ -74,7 +87,7 @@ const RoleManagement = () => {
 
     const newRoleData = { ...newRole, permissions: selectedPermissions };
     try {
-      addRole(newRoleData);  // Add the role using the imported function
+      addRole(newRoleData); // Add the role using the imported function
       toast.success("Role added successfully!");
       navigate("/roles"); // Navigate to Roles Page
     } catch (error) {
