@@ -458,20 +458,20 @@ const ListUser = () => {
                       <option value="Suspended">Suspended</option>
                     </select>
                   </td>
-                  <td className="px-4 py-2 border">
-                    <button
-                      onClick={() => handleEdit(user)}
-                      className="w-full lg:w-auto px-1 py-0 bg-blue-500 text-white rounded-md mr-2"
-                    >
-                      Edit
-                    </button>
-                    <button
-                      onClick={() => handleDelete(user.id)}
-                      className="w-full lg:w-auto px-1 py-0 bg-red-500 text-white rounded-md"
-                    >
-                      Delete
-                    </button>
-                  </td>
+                  <td className="px-4 py-2 border flex space-x-2">
+  <button
+    onClick={() => handleEdit(user)}
+    className="px-1 py-0 bg-blue-500 text-white rounded-md"
+  >
+    Edit
+  </button>
+  <button
+    onClick={() => handleDelete(user.id)}
+    className="px-1 py-0 bg-red-500 text-white rounded-md"
+  >
+    Delete
+  </button>
+</td>
                   <td className="px-4 py-2 border">
                     <button
                       onClick={() => handleAssignRole(user)}
