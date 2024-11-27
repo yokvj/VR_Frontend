@@ -1496,7 +1496,7 @@ const ListUser = () => {
       {showModal && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded">
-            <h3 className="text-xl mb-4">Enter SEC Key to Confirm Deletion</h3>
+            <h3 className="text-xl mb-4">Enter Passcode to Confirm Deletion</h3>
             <input
               type="text"
               value={secKey}
@@ -1504,7 +1504,7 @@ const ListUser = () => {
               className="p-2 border rounded w-full mb-4"
             />
             <div className="flex justify-between">
-              <button onClick={handleSecKeySubmit} className="px-4 py-2 bg-blue-500 text-white rounded">
+              <button onClick={handleSecKeySubmit} className="px-4 py-2 bg-black text-white rounded">
                 Submit
               </button>
               <button onClick={() => setShowModal(false)} className="px-4 py-2 bg-gray-300 text-black rounded">

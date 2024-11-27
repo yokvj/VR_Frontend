@@ -45,7 +45,7 @@ const RoleManagement = () => {
     return (
       <div className="flex justify-center items-start min-h-screen bg-gray-100">
         <div className="bg-white p-6 rounded-lg shadow-md w-96 sm:h-52 md:h-52 lg:h-auto mt-16">
-          <h2 className="text-lg font-semibold mb-4">Enter SEC Key</h2>
+          <h2 className="text-lg font-semibold mb-4">Enter Passcode</h2>
           <input
             type="password"
             placeholder="Enter SEC Key"

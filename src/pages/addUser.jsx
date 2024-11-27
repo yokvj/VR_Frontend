@@ -204,6 +204,8 @@ const addUser = () => {
       <div className="mb-3">
         <label className="block mb-1">Email</label>
         <input
+
+        type="email"
           name="email"
           value={formData.email}
           onChange={handleInputChange}
