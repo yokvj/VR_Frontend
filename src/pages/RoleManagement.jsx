@@ -29,7 +29,7 @@ const RoleManagement = () => {
       setAuthenticated(true);
       toast.success("Authenticated successfully!");
     } else {
-      toast.error("Incorrect SEC Key. Please try again.");
+      toast.error("Incorrect Passcode. Please try again.");
     }
   };
 
@@ -55,7 +55,7 @@ const RoleManagement = () => {
           <h2 className="text-lg font-semibold mb-4">Enter Passcode</h2>
           <input
             type="password"
-            placeholder="Enter SEC Key"
+            placeholder="Enter Passcode"
             value={secKey}
             onChange={(e) => setSecKey(e.target.value)}
             className="w-full p-2 border border-gray-300 rounded-md mb-4"
