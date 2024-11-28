@@ -47,12 +47,20 @@ export const editUser = (updatedUser) => {
 
 let roles = [];  // Array to store roles
 
-// Function to add a role
+
+
 const addRole = (role) => {
-  const isDuplicate = roles.some(existingRole => existingRole.employeeId === role.employeeId);
+  const isDuplicate = roles.some((existingRole) => existingRole.employeeId === role.employeeId);
   if (isDuplicate) {
     throw new Error("Role with the same Employee ID already exists.");
   }
+
+  // Update user status to assigned
+  const user = users.find((u) => u.id === role.employeeId);
+  if (user) {
+    user.assigned = true; // Mark user as assigned
+  }
+
   roles.push(role);
 };
 
@@ -60,9 +68,26 @@ const addRole = (role) => {
 const getRoles = () => {
   return roles;
 };
+// const deleteRole = (employeeId) => {
+//   roles = roles.filter((role) => role.employeeId !== employeeId);
+// };
 const deleteRole = (employeeId) => {
-  roles = roles.filter((role) => role.employeeId !== employeeId);
+  // Find the role to delete
+  const roleToDelete = roles.find((role) => role.employeeId === employeeId);
+
+  // If the role exists, update the user status
+  if (roleToDelete) {
+    // Update the assigned status of the user to false
+    const user = users.find((u) => u.id === roleToDelete.employeeId);
+    if (user) {
+      user.assigned = false; // Mark user as unassigned
+    }
+    
+    // Remove the role from the roles array
+    roles = roles.filter((role) => role.employeeId !== employeeId);
+  }
 };
+
 
 // Export the functions
 export { addRole, getRoles, deleteRole };
