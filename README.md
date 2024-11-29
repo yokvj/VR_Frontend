@@ -8,8 +8,10 @@ Technologies Used
 Frontend Framework: React.js
 Styling: Tailwind CSS
 Authentication: JWT (JSON Web Token)
+
 Environment Variables:
 VITE_SEC_KEY=admin
+
 VITE_ADMIN_EMAIL="admin@gmail.com"
 VITE_ADMIN_PASSWORD="admin"
 
