@@ -9,16 +9,16 @@ Frontend Framework: React.js
 Styling: Tailwind CSS
 Authentication: JWT (JSON Web Token)
 Environment Variables:
-VITE_SEC_KEY=1234
+VITE_SEC_KEY=admin
 VITE_ADMIN_EMAIL="admin@gmail.com"
-VITE_ADMIN_PASSWORD="12345"
+VITE_ADMIN_PASSWORD="admin"
 
 Key Features
 Authentication and Login
 On the first launch, the project redirects to the Login Page.
 Users must log in using:
-Email: admin@gmail.com
-Password: 12345
+VITE_ADMIN_EMAIL="admin@gmail.com"
+VITE_ADMIN_PASSWORD="admin"
 
 Upon successful login:
 A JWT token is generated and stored in localStorage.
@@ -43,7 +43,7 @@ Displays: All users in a tabular format.
 Actions:
 Edit: Opens a form with existing user data and a Save option.
 Delete:
-Prompts for the admin passcode (1234).
+Prompts for the admin passcode (admin).
 Upon successful passcode entry, deletes the user.
 
 Assign Role:
@@ -98,7 +98,7 @@ Checks for duplicate entries based on User ID and Email.
 Ensures all input fields are filled.
 
 Passcode Security
-Admin passcode (1234) is required for deleting users and assigning roles.
+Admin passcode (admin) is required for deleting users and assigning roles.
 JWT Authentication
 JWT token is stored in localStorage upon login for secure access control.
 

@@ -275,7 +275,7 @@ const ListUser = () => {
               type="password"
               value={secKey}
               onChange={(e) => setSecKey(e.target.value)}
-              placeholder="Enter security key"
+              placeholder="Enter Passcode"
               className="p-2 border rounded w-full mt-4"
             />
             <div className="mt-4 flex justify-end">
